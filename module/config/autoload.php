@@ -9,5 +9,8 @@
  *
  */
 
-$GLOBALS['TL_CTE']['nodes']['bootstrap_grid'] = 'Netzmacht\Contao\Bootstrap\GridElement\GridElement';
-$GLOBALS['TL_CONTENT_NODE']['bootstrap_grid'] = array();
+TemplateLoader::addFiles(
+    array(
+        'ce_bootstrap_grid' => 'system/modules/bootstrap-grid-element/templates'
+    )
+);

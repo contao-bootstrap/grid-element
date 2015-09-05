@@ -29,6 +29,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['bootstrap_infinite'] = array
     'label'                   => &$GLOBALS['TL_LANG']['tl_content']['bootstrap_infinite'],
     'exclude'                 => true,
     'inputType'               => 'checkbox',
-    'eval'                    => array('mandatory' => true, 'submitOnChange' => false, 'tl_class' => 'w50'),
+    'eval'                    => array('tl_class' => 'w50 m12'),
     'sql'                     => "char(1) NOT NULL default ''"
 );

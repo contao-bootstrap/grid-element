@@ -5,7 +5,7 @@
 $walker = $this->walker;
 $index  = 0;
 
-$walker->begin();
+echo $walker->walk();
 
 foreach ($this->children as $child) {
     echo $child;
@@ -13,11 +13,11 @@ foreach ($this->children as $child) {
     $index++;
 
     if ($index < count($this->children)) {
-        $walker->walk();
+        echo $walker->walk();
     }
 }
 
-$walker->end();
+echo $walker->end();
 
 ?>
 <?php $this->endblock(); ?>

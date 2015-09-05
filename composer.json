@@ -14,9 +14,9 @@
     ],
     "support":{
         "email":"mail@netzmacht.de",
-        "issues":"https://github.com/contao-bootstrap/grid-elements/issues",
+        "issues":"https://github.com/contao-bootstrap/grid-element/issues",
         "wiki":"http://contao-bootstrap.netzmacht.de",
-        "source":"https://github.com/contao-bootstrap/grid-elements"
+        "source":"https://github.com/contao-bootstrap/grid-element"
     },
     "require":{
         "php":">=5.4",
@@ -38,7 +38,7 @@
         "components/bootstrap": "Bootstrap Components package"
     },
     "autoload": {
-        "psr-4": { "Netzmacht\\Contao\\Bootstrap\\GridElements\\": "src/" }
+        "psr-4": { "Netzmacht\\Contao\\Bootstrap\\GridElement\\": "src/" }
     },
     "extra":{
         "branch-alias": {
