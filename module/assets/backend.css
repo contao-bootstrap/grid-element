@@ -14,3 +14,8 @@
     padding-top: 4px;
     padding-bottom: 8px;
 }
+
+.bootstrap-grid-meta.invalid-grid {
+    background: #faeeee;
+    color: #c33;
+}

@@ -11,3 +11,6 @@
 
 $GLOBALS['TL_LANG']['tl_content']['bootstrap_infinite'][0] = 'Infinite grid columns.';
 $GLOBALS['TL_LANG']['tl_content']['bootstrap_infinite'][1] = 'If enabled no table style columns are created with fixed rows after the set of columns.';
+
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_grid_current'] = 'Column %s';
+$GLOBALS['TL_LANG']['tl_content']['bootstrap_grid_invalid'] = 'Invalid grid definition';

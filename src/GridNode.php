@@ -34,12 +34,15 @@ class GridNode extends BaseNode
     private function getWalker($pid)
     {
         if (!isset($this->walkers[$pid])) {
-            $parent  = \ContentModel::findByPk($pid);
-            $factory = new Factory();
-            $grid    = $factory->createById($parent->bootstrap_grid);
-            $walker  = new Walker($grid, true, (bool) $parent->bootstrap_infinite);
+            try {
+                $parent  = \ContentModel::findByPk($pid);
+                $factory = new Factory();
+                $grid    = $factory->createById($parent->bootstrap_grid);
 
-            $this->walkers[$pid] = $walker;
+                $this->walkers[$pid] = new Walker($grid, true, (bool) $parent->bootstrap_infinite);;
+            } catch (\Exception $e) {
+                $this->walkers[$pid] = null;
+            }
         }
 
         return $this->walkers[$pid];
@@ -50,13 +53,20 @@ class GridNode extends BaseNode
      */
     public function generateChildInBackendView(array $child, $generated)
     {
-        $walker  = $this->getWalker($child['pid']);
+        $walker = $this->getWalker($child['pid']);
+
+        if (!$walker) {
+            return sprintf(
+                '<div class="bootstrap-grid-meta invalid-grid">%s</div>',
+                $this->getTranslator()->translate('bootstrap_grid_invalid', 'tl_content')
+            ) . $generated;
+        }
+
         $classes = $walker->walk();
 
-        return sprintf('<div class="bootstrap-grid-meta">%s. Spalte <span class="tl_gray">[%s]</span></div>%s',
-            ($walker->getIndex() + 1),
-            $classes,
-            $generated
-        );
+        return sprintf('<div class="bootstrap-grid-meta">%s <span class="tl_gray">[%s]</span></div>',
+            $this->getTranslator()->translate('bootstrap_grid_current', 'tl_content', [($walker->getIndex() + 1)]),
+            $classes
+        ) . $generated;
     }
 }
