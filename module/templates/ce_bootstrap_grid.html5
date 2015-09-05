@@ -5,7 +5,7 @@
 $walker = $this->walker;
 $index  = 0;
 
-echo $walker->walk();
+echo $walker->begin();
 
 foreach ($this->children as $child) {
     echo $child;
