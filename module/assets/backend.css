@@ -1,0 +1,16 @@
+
+.node-bootstrap_grid > ul > li > .tl_content {
+    padding-top: 6px;
+}
+
+.bootstrap-grid-meta {
+    background: #f0f0f0;
+    padding: 0 4px 6px 4px;
+    color: #555;
+    margin: -5px -5px 5px;
+}
+
+.node-bootstrap_grid > ul > li > .tl_content > .bootstrap-grid-meta {
+    padding-top: 4px;
+    padding-bottom: 8px;
+}

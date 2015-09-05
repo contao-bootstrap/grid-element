@@ -10,4 +10,10 @@
  */
 
 $GLOBALS['TL_CTE']['nodes']['bootstrap_grid'] = 'Netzmacht\Contao\Bootstrap\GridElement\GridElement';
-$GLOBALS['TL_CONTENT_NODE']['bootstrap_grid'] = array();
+$GLOBALS['TL_CONTENT_NODE']['bootstrap_grid'] = array(
+    'class' => 'Netzmacht\Contao\Bootstrap\GridElement\GridNode'
+);
+
+if (TL_MODE === 'BE') {
+    $GLOBALS['TL_CSS'][] = 'system/modules/bootstrap-grid-element/assets/backend.css';
+}
