@@ -1,0 +1,62 @@
+{
+    "name":"contao-bootstrap/grid-element",
+    "description":"Contao Bootstrap grid content element.",
+    "keywords":["bootstrap", "contao", "core", "grid", "element"],
+    "type":"contao-module",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"David Molineus",
+            "email":"mail@netzmacht.de",
+            "homepage":"http://www.netzmacht.de",
+            "role":"Project leader"
+        }
+    ],
+    "support":{
+        "email":"mail@netzmacht.de",
+        "issues":"https://github.com/contao-bootstrap/grid-elements/issues",
+        "wiki":"http://contao-bootstrap.netzmacht.de",
+        "source":"https://github.com/contao-bootstrap/grid-elements"
+    },
+    "require":{
+        "php":">=5.4",
+        "contao/core":">=3.3,<3.6-dev",
+        "contao-community-alliance/composer-plugin": "~2.0",
+        "contao-community-alliance/meta-palettes": "~1.9",
+        "contao-bootstrap/grid-editor": "~1.1",
+        "netzmacht/contao-content-node": "~1"
+    },
+    "require-dev": {
+        "netzmacht/contao-build-tools": "~1.1"
+    },
+    "conflict": {
+        "netzmacht/contao-bootstrap": "*"
+    },
+    "suggest": {
+        "netzmacht/contao-theme-plus-importer": "Import assets into Theme+",
+        "twbs/bootstrap": "Official Bootstrap package",
+        "components/bootstrap": "Bootstrap Components package"
+    },
+    "autoload": {
+        "psr-4": { "Netzmacht\\Contao\\Bootstrap\\GridElements\\": "src/" }
+    },
+    "extra":{
+        "branch-alias": {
+            "dev-master": "1.0.x-dev",
+            "dev-develop": "1.1.x-dev"
+        },
+        "contao": {
+            "sources":{
+                "module": "system/modules/bootstrap-grid-element"
+            },
+            "transifex": {
+                "project": "contao-bootstrap",
+                "prefix": "core-",
+                "languages_cto": "module/languages",
+                "languages_tx": ".tx"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

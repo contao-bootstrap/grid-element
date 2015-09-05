@@ -1,0 +1,23 @@
+<?php $this->extend('block_searchable'); ?>
+<?php $this->block('content'); ?>
+<?php
+/** @var Netzmacht\Bootstrap\Grid\Walker $walker */
+$walker = $this->walker;
+$index  = 0;
+
+$walker->begin();
+
+foreach ($this->children as $child) {
+    echo $child;
+
+    $index++;
+
+    if ($index < count($this->children)) {
+        $walker->walk();
+    }
+}
+
+$walker->end();
+
+?>
+<?php $this->endblock(); ?>
