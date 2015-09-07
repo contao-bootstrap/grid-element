@@ -5,17 +5,21 @@
 
 .bootstrap-grid-meta {
     background: #f0f0f0;
-    padding: 0 4px 6px 4px;
+    padding: 1px 4px 7px 4px;
     color: #555;
     margin: -5px -5px 5px;
 }
 
 .node-bootstrap_grid > ul > li > .tl_content > .bootstrap-grid-meta {
-    padding-top: 4px;
-    padding-bottom: 8px;
+    padding-top: 5px;
+    padding-bottom: 9px;
 }
 
 .bootstrap-grid-meta.invalid-grid {
     background: #faeeee;
     color: #c33;
+}
+
+.node-bootstrap_grid > .content-node-inner > .content-node-buttons {
+    margin-top: -5px;
 }
