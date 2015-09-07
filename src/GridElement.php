@@ -12,6 +12,7 @@
 namespace Netzmacht\Contao\Bootstrap\GridElement;
 
 use Netzmacht\Bootstrap\Grid\Factory;
+use Netzmacht\Bootstrap\Grid\Grid;
 use Netzmacht\Bootstrap\Grid\Walker;
 use Netzmacht\Contao\ContentNode\NodeElement;
 
@@ -37,7 +38,13 @@ class GridElement extends NodeElement
     protected function createGridWalker()
     {
         $factory = new Factory();
-        $grid    = $factory->createById($this->bootstrap_grid);
+
+        try {
+            $grid = $factory->createById($this->bootstrap_grid);
+        } catch (\Exception $e) {
+            $this->log($e->getMessage(), __METHOD__, TL_ERROR);
+            $grid = new Grid();
+        }
 
         return new Walker($grid, false, (bool)$this->bootstrap_finite);
     }
