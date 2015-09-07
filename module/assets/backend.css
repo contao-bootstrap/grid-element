@@ -20,6 +20,6 @@
     color: #c33;
 }
 
-.node-bootstrap_grid > .content-node-inner > .content-node-buttons {
-    margin-top: -5px;
+.node-bootstrap_grid > .content-node-inner > .content-node-operations {
+    margin-top: -4px;
 }
